@@ -9,6 +9,8 @@
   padding-top: 0 !important; /* 清除默认间距 */
   position: relative;
   height: 100vh;
+  overflow: hidden; 
+  touch-action: none; /* 禁用触摸滚动 */
 }
 
 /* 消息图标 */
