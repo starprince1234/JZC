@@ -1,0 +1,62 @@
+
+<view class="SCU">SCU Makers</view>
+<view>  
+  <!--假定背景图id为1，猫猫id为2 (确定接口后再用) -->
+  <!-- <image class="background" src="data:{{image1.filetype}};base64,{{image1.data}}" alt="{{image1.alt_text}}"></image>
+  <image class="cat" src="data:{{image2.filetype}};base64,{{image2.data}}" alt="{{image2.alt_text}}"></image> -->
+  <image class="background" src="/images/login/1.png"></image>
+  <image class="cat" src="/images/login/白色猫猫.png"></image>
+</view>
+
+<view  class="login-content">
+  <!-- 登录表单内容 -->
+  <image class="dial" src="/images/login/对话框.png" mode="scaleToFill" style="width: 80vw; height: 56vh;"></image>
+  <view class="login-title">登录 SCU Makers 小程序</view>
+  <form>
+    <view class="form-item">
+      <label>邮箱</label>
+      <input
+        class="preinput {{isFocused1 ? 'focused' : ''}}"
+        type="text"
+        placeholder="你的邮箱"
+        cursor="{{cursorPosition}}"
+        value="{{email}}"
+        bindinput="handleEmailInput"
+        bindfocus="handleFocus1"
+        bindblur="handleBlur1"
+      />
+    </view>   
+
+    <view class="form-item" bindtap="handleContainerClick">
+      <label>密码</label>
+      <view class="input-container">
+      <input
+        class="preinput {{isFocused2 ? 'focused' : ''}}"
+        type="{{isPasswordVisible ? 'text' : 'password'}}"
+        placeholder="密码"
+        value="{{password}}"
+        bindinput="handlePasswordInput"
+        bindfocus="handleFocus2"
+        bindblur="handleBlur2"
+        focus="{{isFocus}}"
+      />
+      <image
+        src="{{isPasswordVisible ? 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDQ4IDQ4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0yNCAzNkMzNS4wNDU3IDM2IDQ0IDI0IDQ0IDI0QzQ0IDI0IDM1LjA0NTcgMTIgMjQgMTJDMTIuOTU0MyAxMiA0IDI0IDQgMjRDNCAyNCAxMi45NTQzIDM2IDI0IDM2WiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNMjQgMjlDMjYuNzYxNCAyOSAyOSAyNi43NjE0IDI5IDI0QzI5IDIxLjIzODYgMjYuNzYxNCAxOSAyNCAxOUMyMS4yMzg2IDE5IDE5IDIxLjIzODYgMTkgMjRDMTkgMjYuNzYxNCAyMS4yMzg2IDI5IDI0IDI5WiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=' : 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDQ4IDQ4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik02IDE2QzYuNjM0NzIgMTcuMjE5MyA3LjU5NjQ2IDE4LjM1MDQgOC44MjI3NiAxOS4zNTU0QzEyLjI2MSAyMi4xNzMzIDE3Ljc3OSAyNCAyNCAyNEMzMC4yMjEgMjQgMzUuNzM5IDIyLjE3MzMgMzkuMTc3MiAxOS4zNTU0QzQwLjQwMzUgMTguMzUwNCA0MS4zNjUzIDE3LjIxOTMgNDIgMTYiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNMjguOTc3NSAyNEwzMS4wNDggMzEuNzI3NCIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik0zNy4zNTM1IDIxLjM1MzZMNDMuMDEwMyAyNy4wMTA0IiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBhdGggZD0iTTUuMDAwMDQgMjcuMDEwM0wxMC42NTY5IDIxLjM1MzQiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNMTYuOTI3OCAzMS43Mjc2TDE4Ljk5ODMgMjQuMDAwMSIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg=='}}"
+        catchtap="togglePasswordVisibility"
+        data-visible="{{isPasswordVisible}}"
+        class="password-toggle-icon"
+      />
+    </view>
+  </view> 
+
+    <view class="else">
+    <checkbox class="checkbox" checked="{{rememberMe}}" bindtap="toggleRememberMe">记住我</checkbox>
+    <text class="forget-password" bindtap="handleForgetPassword">忘记密码?</text>
+    </view>
+
+    <button class="button" bindtap="handleLogin">登  录</button>
+    <image class="arrow" src="/images/login/icn_general_arrow_go_white.png"></image>
+    
+    <text class="register-link" bindtap="navigateToRegister">注册账号</text>
+  </form>
+</view>
