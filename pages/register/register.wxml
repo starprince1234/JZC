@@ -1,0 +1,72 @@
+<view class="container">
+  
+  <view class="content">
+    <image class="background" src="/images/register/1.png" alt="{{image1.alt_text}}"></image>
+    <view class="SCU">SCU Makers</view>
+    <image class="dial" src="/images/register/对话框2.png" mode="scaleToFill" style="width: 80vw; height: 70vh;"></image>
+    <view class="register-content">
+      <view class="register-title">注册 SCU Makers 小程序</view>
+      <form>
+        <view class="form-item">
+          <label>邮箱</label>
+          <input class="preinput {{isFocused1 ? 'focused' : ''}}" type="text" placeholder="你的邮箱" value="{{email}}" bindfocus="handleFocus1" bindinput="handleEmailInput" bindblur="handleBlur1"/>
+        </view>
+        <view class="form-item">
+          <label>验证码</label>
+          <view class="input-container1">
+            <input class="preinput {{isFocused2 ? 'focused' : ''}}" type="text" placeholder="验证码" value="{{verifyCode}}" bindinput="handleVerifyCodeInput" bindfocus="handleFocus2" bindblur="handleBlur2"/>
+            <button class="code" bindtap="getVerifyCode">获取验证码</button>
+          </view>
+        </view>
+        <view class="form-item" bindtap="handleContainerClick">
+          <label>密码</label>
+          <view class="input-container2">
+            <input
+            class="preinput {{isFocused3 ? 'focused' : ''}}"
+            type="{{isPasswordVisible1 ? 'text' : 'password'}}"
+            placeholder="密码"
+            value="{{password}}"
+            bindinput="handlePasswordInput"
+            bindfocus="handleFocus3"
+            bindblur="handleBlur3"
+            focus="{{isFocus1}}"
+            />
+            <image
+              src="{{isPasswordVisible1 ? 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDQ4IDQ4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0yNCAzNkMzNS4wNDU3IDM2IDQ0IDI0IDQ0IDI0QzQ0IDI0IDM1LjA0NTcgMTIgMjQgMTJDMTIuOTU0MyAxMiA0IDI0IDQgMjRDNCAyNCAxMi45NTQzIDM2IDI0IDM2WiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNMjQgMjlDMjYuNzYxNCAyOSAyOSAyNi43NjE0IDI5IDI0QzI5IDIxLjIzODYgMjYuNzYxNCAxOSAyNCAxOUMyMS4yMzg2IDE5IDE5IDIxLjIzODYgMTkgMjRDMTkgMjYuNzYxNCAyMS4yMzg2IDI5IDI0IDI5WiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=' : 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDQ4IDQ4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik02IDE2QzYuNjM0NzIgMTcuMjE5MyA3LjU5NjQ2IDE4LjM1MDQgOC44MjI3NiAxOS4zNTU0QzEyLjI2MSAyMi4xNzMzIDE3Ljc3OSAyNCAyNCAyNEMzMC4yMjEgMjQgMzUuNzM5IDIyLjE3MzMgMzkuMTc3MiAxOS4zNTU0QzQwLjQwMzUgMTguMzUwNCA0MS4zNjUzIDE3LjIxOTMgNDIgMTYiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNMjguOTc3NSAyNEwzMS4wNDggMzEuNzI3NCIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik0zNy4zNTM1IDIxLjM1MzZMNDMuMDEwMyAyNy4wMTA0IiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBhdGggZD0iTTUuMDAwMDQgMjcuMDEwM0wxMC42NTY5IDIxLjM1MzQiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNMTYuOTI3OCAzMS43Mjc2TDE4Ljk5ODMgMjQuMDAwMSIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg=='}}"
+            catchtap="togglePasswordVisibility1"
+            data-visible="{{isPasswordVisible1}}"
+            class="password-toggle-icon"
+            />
+          </view>
+        </view>
+        <view class="form-item" bindtap="handleContainerClick">
+          <label>确认密码</label>
+          <view class="input-container3">
+            <input
+            class="preinput {{isFocused4 ? 'focused' : ''}}"
+            type="{{isPasswordVisible2 ? 'text' : 'password'}}"
+            placeholder="确认密码"
+            value="{{confirmPassword}}"
+            bindinput="handleConfirmPasswordInput"
+            bindfocus="handleFocus4"
+            bindblur="handleBlur4"
+            focus="{{isFocus2}}"
+            />
+            <image
+              src="{{isPasswordVisible2 ? 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDQ4IDQ4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0yNCAzNkMzNS4wNDU3IDM2IDQ0IDI0IDQ0IDI0QzQ0IDI0IDM1LjA0NTcgMTIgMjQgMTJDMTIuOTU0MyAxMiA0IDI0IDQgMjRDNCAyNCAxMi45NTQzIDM2IDI0IDM2WiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNMjQgMjlDMjYuNzYxNCAyOSAyOSAyNi43NjE0IDI5IDI0QzI5IDIxLjIzODYgMjYuNzYxNCAxOSAyNCAxOUMyMS4yMzg2IDE5IDE5IDIxLjIzODYgMTkgMjRDMTkgMjYuNzYxNCAyMS4yMzg2IDI5IDI0IDI5WiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=' : 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDQ4IDQ4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik02IDE2QzYuNjM0NzIgMTcuMjE5MyA3LjU5NjQ2IDE4LjM1MDQgOC44MjI3NiAxOS4zNTU0QzEyLjI2MSAyMi4xNzMzIDE3Ljc3OSAyNCAyNCAyNEMzMC4yMjEgMjQgMzUuNzM5IDIyLjE3MzMgMzkuMTc3MiAxOS4zNTU0QzQwLjQwMzUgMTguMzUwNCA0MS4zNjUzIDE3LjIxOTMgNDIgMTYiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNMjguOTc3NSAyNEwzMS4wNDggMzEuNzI3NCIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik0zNy4zNTM1IDIxLjM1MzZMNDMuMDEwMyAyNy4wMTA0IiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBhdGggZD0iTTUuMDAwMDQgMjcuMDEwM0wxMC42NTY5IDIxLjM1MzQiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNMTYuOTI3OCAzMS43Mjc2TDE4Ljk5ODMgMjQuMDAwMSIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg=='}}"
+              catchtap="togglePasswordVisibility2"
+              data-visible="{{isPasswordVisible2}}"
+              class="password-toggle-icon"
+            />
+          </view>
+        </view>
+        <view class="button1">
+          <button class="button" bindtap="handleRegister">注  册</button>
+          <image class="arrow" src="/images/register/icn_general_arrow_go_white.png"></image>
+        </view>
+        <text class="login-link" bindtap="navigateToRegister">返回登录界面</text>
+      </form>
+      
+    </view>
+  </view>
+</view>
