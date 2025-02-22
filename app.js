@@ -1,5 +1,4 @@
 //app.js
-import page from '../mini——1/utils/page';
 App({
     onLaunch: function() {
         Page = page;

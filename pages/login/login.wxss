@@ -1,197 +1,354 @@
-/* pages/login/login.wxss */
-/* 图片 */
+/* 背景样式 */
 .background {
+  /* 使用绝对定位，相对于最近的已定位祖先元素进行定位 */
   position: absolute;
+  /* 元素左边缘与父元素左边缘对齐 */
   left: 0;
+  /* 元素下边缘与父元素下边缘对齐 */
   bottom: 0%;
+  /* 将元素显示为块级元素，会独占一行 */
   display: block;
+  /* 元素宽度占父元素宽度的 100% */
   width: 100%;
+  /* 元素高度占父元素高度的 100% */
   height: 100%;
-  z-index: -999; /* 图片叠加在底部 */
+  /* 设置元素的堆叠顺序，-999 表示该元素在最底层 */
+  z-index: -999; 
 }
+
+/* 对话框样式 */
 .dial {
-  /* 对话框 */
+  /* 使用弹性布局，方便子元素的排列 */
   display: flex;
+  /* 使用固定定位，相对于浏览器窗口进行定位 */
   position: fixed;
+  /* 元素左边缘距离浏览器窗口左边缘 10% 的宽度 */
   left: 10%; 
+  /* 元素上边缘距离浏览器窗口上边缘 17% 的高度 */
   top: 17%;  
+  /* 元素宽度占浏览器窗口宽度的 50% */
   width: 50vw;
+  /* 元素的不透明度为 1，即完全不透明 */
   opacity: 1;
-  z-index: -998; /* 图片叠加在底部 */
+  /* 设置元素的堆叠顺序，-998 表示该元素在背景之上，但仍在较底层 */
+  z-index: -998; 
 }
+
+/* SCU 文本样式 */
 .SCU{
+  /* 使用弹性布局 */
   display: flex;
+  /* 使用固定定位 */
   position: fixed;
+  /* 元素左边缘距离浏览器窗口左边缘 23% 的宽度 */
   left: 23%;
+  /* 元素上边缘距离浏览器窗口上边缘 11% 的高度 */
   top: 11%;
+  /* 元素宽度为 202rpx（rpx 是微信小程序中使用的尺寸单位） */
   width: 202rpx;
+  /* 元素高度为 48rpx */
   height: 48rpx;
+  /* 元素的不透明度为 1，即完全不透明 */
   opacity: 1;
+  /* 字体大小为 70rpx */
   font-size: 70rpx;
+  /* 字体粗细为 800，即加粗 */
   font-weight: 800;
+  /* 字母间距为 0px */
   letter-spacing: 0px;
+  /* 行高为 47.74rpx */
   line-height: 47.74rpx;
+  /* 字体颜色为白色 */
   color: rgba(255, 255, 255, 1);
+  /* 文本左对齐 */
   text-align: left;
+  /* 垂直对齐方式为顶部对齐 */
   vertical-align: top;
+  /* 文本不换行 */
   white-space: nowrap;  
 }
+
+/* 吉祥物样式 */
 .cat {
-  /* 吉祥物*/
+  /* 使用弹性布局 */
   display: flex;
+  /* 使用固定定位 */
   position: fixed;
+  /* 元素左边缘距离浏览器窗口左边缘 20% 的宽度 */
   left: 20%;
+  /* 元素上边缘距离浏览器窗口上边缘 77.5% 的高度 */
   top: 77.5%;
+  /* 元素宽度占浏览器窗口宽度的 62% */
   width: 62vw;
+  /* 元素高度占浏览器窗口高度的 20% */
   height: 20vh;
+  /* 元素的不透明度为 1，即完全不透明 */
   opacity: 1;
-  z-index: -997; /* 图片叠加在底部 */
+  /* 设置元素的堆叠顺序，-997 表示该元素在较底层 */
+  z-index: -997; 
 }
+
+/* 箭头样式 */
 .arrow{
+  /* 使用弹性布局 */
   display: flex;
+  /* 使用绝对定位 */
   position: absolute;
-  width:8vw;
-  height:5vh;
+  /* 元素宽度占浏览器窗口宽度的 8% */
+  width: 8vw;
+  /* 元素高度占浏览器窗口高度的 5% */
+  height: 5vh;
+  /* 元素上边缘距离其父元素上边缘 73.5% 的高度 */
   top: 73.5%;
+  /* 元素右边缘距离其父元素右边缘 32% 的宽度 */
   right: 32%;
+  /* 背景图片根据元素大小进行缩放，保持图片比例 */
   background-size: contain;
+  /* 设置元素的堆叠顺序，999 表示该元素在最上层 */
   z-index: 999;
 }
+
+/* 按钮样式 */
 .button {
+  /* 按钮背景颜色为 #00ADB5 */
   background-color: #00ADB5;
+  /* 按钮文字颜色为白色 */
   color: white;
+  /* 按钮边框圆角为 30rpx */
   border-radius: 30rpx;
-  width: 70vw; /* 使用视口宽度单位 */
-  height: 5.9vh; /* 使用视口高度单位 */
+  /* 按钮宽度占浏览器窗口宽度的 70% */
+  width: 70vw; 
+  /* 按钮高度占浏览器窗口高度的 5.9% */
+  height: 5.9vh; 
+  /* 按钮的不透明度为 1，即完全不透明 */
   opacity: 1;
+  /* 字体粗细为 700，即加粗 */
   font-weight: 700;
+  /* 使用弹性布局，使按钮内的内容水平居中 */
   display: flex;
+  /* 子元素在主轴上居中对齐 */
   justify-content: center;
+  /* 子元素在交叉轴上居中对齐 */
   align-items: center;
-  position: absolute; /* 固定定位 */
+  /* 使用绝对定位 */
+  position: absolute; 
+  /* 元素下边缘距离其父元素下边缘 17% 的高度 */
   bottom: 17%; 
-  left: 6%; /* 水平居中 */
+  /* 元素左边缘距离其父元素左边缘 6% 的宽度 */
+  left: 6%; 
+  /* 设置元素的堆叠顺序，999 表示该元素在最上层 */
   z-index: 999;
 }
-/* 图片结束 */
+
+/* 图片样式结束 */
+
+/* 表单样式 */
 form {
+  /* 使用绝对定位 */
   position: absolute;
+  /* 元素宽度占父元素宽度的 100% */
   width: 100%;
+  /* 元素上边缘与父元素上边缘对齐 */
   top: 0%;
+  /* 元素高度占父元素高度的 100% */
   height: 100%;
+  /* 元素宽度占浏览器窗口宽度的 80% */
   width: 80vw;
+  /* 元素左边缘距离父元素左边缘 10% 的宽度 */
   left: 10%;
 }
+
+/* 登录内容样式 */
 .login-content {
+  /* 使用弹性布局 */
   display: flex;
+  /* 使用绝对定位 */
   position: absolute;
+  /* 元素宽度占父元素宽度的 100% */
   width: 100%;
+  /* 元素高度占浏览器窗口高度的 56% */
   height: 56vh;
+  /* 元素上边缘距离父元素上边缘 17% 的高度 */
   top: 17%;
 }
-/* 80和10%left */
+
+/* 登录标题样式 */
 .login-title {
+  /* 使用绝对定位 */
   position: absolute;
-  top:14%;
+  /* 元素上边缘距离父元素上边缘 14% 的高度 */
+  top: 14%;
+  /* 元素左边缘距离父元素左边缘 24% 的宽度 */
   left: 24%;
+  /* 元素宽度为 400rpx */
   width: 400rpx;
+  /* 元素高度为 26rpx */
   height: 26rpx;
+  /* 元素的不透明度为 1，即完全不透明 */
   opacity: 1;
+  /* 字体大小为 30rpx */
   font-size: 30rpx;
+  /* 字体粗细为 700，即加粗 */
   font-weight: 700;
+  /* 字母间距为 0px */
   letter-spacing: 0px;
+  /* 行高为 26rpx */
   line-height: 26rpx;
+  /* 字体颜色为 #222831 */
   color: rgba(34, 40, 49, 1);
+  /* 文本居中对齐 */
   text-align: center;
+  /* 垂直对齐方式为顶部对齐 */
   vertical-align: top;
-  z-index: 1; /* 设置较高的层级 */
+  /* 设置元素的堆叠顺序，1 表示该元素在较高层级 */
+  z-index: 1; 
 }
-/* 密码与你的邮箱的边距 */
+
+/* 表单项样式，用于设置密码与邮箱输入框的边距 */
 .form-item {
+  /* 使用相对定位，相对于其正常位置进行定位 */
   position: relative;
+  /* 元素相对于其正常位置向下偏移 20% 的高度 */
   top: 20%;
+  /* 元素顶部外边距为 30rpx */
   margin-top: 30rpx;
+  /* 元素左边缘距离父元素左边缘 9% 的宽度 */
   left: 9%;
+  /* 字体颜色为 #00ADB5 */
   color: #00ADB5;
+  /* 字体大小为 30rpx */
   font-size: 30rpx;
+  /* 字体粗细为 700，即加粗 */
   font-weight: 700;
+  /* 字母间距为 0px */
   letter-spacing: 0px;
+  /* 行高为 26rpx */
   line-height: 26rpx;
 }
+
+/* 表单项内标签样式 */
 .form-item label {
+  /* 将标签显示为块级元素，会独占一行 */
   display: block;
+  /* 标签底部外边距为 30rpx */
   margin-bottom: 30rpx;
+  /* 标签左边缘外边距为 20rpx */
   margin-left: 20rpx;
+  /* 字体颜色为 #00ADB5 */
   color: #00ADB5;
+  /* 字体大小为 30rpx */
   font-size: 30rpx;
+  /* 字体粗细为 700，即加粗 */
   font-weight: 700;
 }
+
+/* 表单项内输入框样式 */
 .form-item input{
+  /* 输入框左边缘外边距为 0% */
   margin-left: 0%;
 }
-/* 默认样式 */
+
+/* 输入框容器默认样式 */
 .input-container {
+  /* 使用相对定位 */
   position: relative;
+  /* 元素宽度占父元素宽度的 100% */
   width: 100%;
 }
 
-
-/* 选中时的样式 */
+/* 输入框选中时的样式 */
 .preinput.focused {
+  /* 输入框边框颜色为 #00ADB5 */
   border-color: #00ADB5;
+  /* 输入框添加阴影效果 */
   box-shadow: 0 0 5px rgba(0, 173, 181, 0.5);
 }
+
+/* 密码可见切换图标样式 */
 .password-toggle-icon {
+  /* 使用绝对定位 */
   position: absolute;
+  /* 元素右边缘距离其父元素右边缘 22% 的宽度 */
   right: 22%;
+  /* 元素高度为 50rpx */
   height: 50rpx;
+  /* 元素宽度为 50rpx */
   width: 50rpx;
+  /* 元素上边缘距离其父元素上边缘 50% 的高度 */
   top: 50%;
-  transform: translateY(-50%); /* 微调垂直居中 */
+  /* 元素在垂直方向上向上偏移自身高度的 50%，实现垂直居中 */
+  transform: translateY(-50%); 
+  /* 鼠标指针变为手型，表示可点击 */
   cursor: pointer;
+  /* 设置元素的堆叠顺序，999 表示该元素在最上层 */
   z-index: 999;
 }
 
-/* 记住我与忘记密码 */
+/* 当屏幕高度小于等于 600px 时的样式 */
 @media screen and (max-height: 600px) {
+  /* 复选框样式 */
   .checkbox {
-     transform: scale(0.7);
-   }
-   .forget-password {
-    float: right;
-    color: #7D8592;
-    cursor: pointer;
-    transform: scale(0.7) translateY(10%);
-
+    /* 复选框缩小为原来的 0.7 倍 */
+    transform: scale(0.7);
   }
+  /* 忘记密码链接样式 */
+  .forget-password {
+    /* 元素向右浮动 */
+    float: right;
+    /* 字体颜色为 #7D8592 */
+    color: #7D8592;
+    /* 鼠标指针变为手型，表示可点击 */
+    cursor: pointer;
+    /* 忘记密码链接缩小为原来的 0.7 倍，并在垂直方向上向下偏移 10% */
+    transform: scale(0.7) translateY(10%);
+  }
+  /* 其他元素样式 */
   .else {
+    /* 使用绝对定位 */
     position: absolute;
+    /* 元素上边缘距离父元素上边缘 63% 的高度 */
     top: 63%;
+    /* 元素左边缘距离父元素左边缘 10% 的宽度 */
     left: 10%;
+    /* 元素宽度占浏览器窗口宽度的 63% */
     width: 63vw;
   }
+  /* 输入框样式 */
   .preinput {
+    /* 输入框边框为 1px 灰色实线 */
     border: 1px solid #ccc;
+    /* 输入框在弹性布局中自动填充剩余空间 */
     flex: 1;
+    /* 输入框内边距为 1% */
     padding: 1%;
+    /* 字体粗细为 500 */
     font-weight: 500;
+    /* 字体大小为 25rpx */
     font-size: 25rpx;
+    /* 输入框边框圆角为 15rpx */
     border-radius: 15rpx;
+    /* 去除输入框聚焦时的默认轮廓 */
     outline: none;
+    /* 输入框宽度占父元素宽度的 75% */
     width: 75%;
+    /* 输入框左内边距为 20rpx */
     padding-left: 20rpx;
+    /* 行高为 76rpx */
     line-height: 76rpx;
   }
- }
- 
- @media screen and (min-height: 600px) and (max-height: 700px) {
+}
+
+/* 当屏幕高度在 600px 到 700px 之间时的样式 */
+@media screen and (min-height: 600px) and (max-height: 700px) {
   .checkbox {
+    /* 复选框缩小为原来的 0.8 倍 */
     transform: scale(0.8);
-   }
-   .forget-password {
+  }
+  .forget-password {
     float: right;
     color: #7D8592;
     cursor: pointer;
+    /* 忘记密码链接缩小为原来的 0.8 倍，并在垂直方向上向下偏移 10% */
     transform: scale(0.8) translateY(10%);
   }
   .else {
@@ -203,6 +360,7 @@ form {
   .preinput {
     border: 1px solid #ccc;
     flex: 1;
+    /* 输入框内边距为 2% */
     padding: 2%;
     font-weight: 500;
     font-size: 25rpx;
@@ -212,12 +370,14 @@ form {
     padding-left: 20rpx;
     line-height: 76rpx;
   }
- }
- @media screen and (min-height: 700px) and (max-height: 800px) {
+}
+
+/* 当屏幕高度在 700px 到 800px 之间时的样式 */
+@media screen and (min-height: 700px) and (max-height: 800px) {
   .checkbox {
     transform: scale(0.8);
-   }
-   .forget-password {
+  }
+  .forget-password {
     float: right;
     color: #7D8592;
     cursor: pointer;
@@ -232,6 +392,7 @@ form {
   .preinput {
     border: 1px solid #ccc;
     flex: 1;
+    /* 输入框内边距为 2.5% */
     padding: 2.5%;
     font-weight: 500;
     font-size: 25rpx;
@@ -241,23 +402,85 @@ form {
     padding-left: 20rpx;
     line-height: 76rpx;
   }
- }
- @media screen and (min-height: 800px) and (max-height: 900px)  {
+}
+
+/* 当屏幕高度在 800px 到 900px 之间时应用以下样式 */
+@media screen and (min-height: 800px) and (max-height: 900px)  {
+  /* 复选框样式 */
   .checkbox {
+    /* 不改变复选框的大小，即按原始大小显示 */
     transform: scale(1);
-   }
-   .forget-password {
+  }
+  /* 忘记密码链接样式 */
+  .forget-password {
+    /* 使元素向右浮动 */
+    float: right;
+    /* 设置文字颜色 */
+    color: #7D8592;
+    /* 鼠标悬停时显示为手型，提示可点击 */
+    cursor: pointer;
+    /* 不改变忘记密码链接的大小，按原始大小显示 */
+    transform: scale(1);
+  }
+  /* 名为 else 的元素样式 */
+  .else {
+    /* 使用绝对定位 */
+    position: absolute;
+    /* 元素顶部距离父元素顶部 62% 的高度 */
+    top: 62%;
+    /* 元素左侧距离父元素左侧 10% 的宽度 */
+    left: 10%;
+    /* 元素宽度为视口宽度的 63% */
+    width: 63vw;
+  }
+  /* 输入框样式 */
+  .preinput {
+    /* 设置输入框的边框为 1 像素的灰色实线 */
+    border: 1px solid #ccc;
+    /* 使输入框在弹性布局中占据剩余空间 */
+    flex: 1;
+    /* 输入框内边距为 3% */
+    padding: 3%;
+    /* 字体粗细为 500 */
+    font-weight: 500;
+    /* 字体大小为 25rpx */
+    font-size: 25rpx;
+    /* 输入框边框圆角为 15rpx */
+    border-radius: 15rpx;
+    /* 去除输入框聚焦时的默认轮廓 */
+    outline: none;
+    /* 输入框宽度为父元素宽度的 75% */
+    width: 75%;
+    /* 输入框左侧内边距为 20rpx */
+    padding-left: 20rpx;
+    /* 行高为 76rpx */
+    line-height: 76rpx;
+  }
+}
+
+/* 当屏幕高度在 900px 到 1000px 之间时应用以下样式 */
+@media screen and (min-height: 900px) and (max-height: 1000px)  {
+  /* 复选框样式 */
+  .checkbox {
+    /* 将复选框放大为原始大小的 1.2 倍 */
+    transform: scale(1.2);
+  }
+  /* 忘记密码链接样式 */
+  .forget-password {
     float: right;
     color: #7D8592;
     cursor: pointer;
-    transform: scale(1);
+    /* 将忘记密码链接放大为原始大小的 1.2 倍 */
+    transform: scale(1.2);
   }
+  /* 名为 else 的元素样式 */
   .else {
     position: absolute;
     top: 62%;
     left: 10%;
     width: 63vw;
   }
+  /* 输入框样式 */
   .preinput {
     border: 1px solid #ccc;
     flex: 1;
@@ -270,45 +493,88 @@ form {
     padding-left: 20rpx;
     line-height: 76rpx;
   }
- }
- @media screen and (min-height: 900px) and (max-height: 1000px)  {
+}
+
+/* 当屏幕高度大于等于 1000px 时应用以下样式 */
+@media screen and (min-height: 1000px){
+  /* 复选框样式 */
   .checkbox {
-    transform: scale(1.2);
-   }
-   .forget-password {
+    /* 将复选框放大为原始大小的 2 倍 */
+    transform: scale(2);
+  }
+  /* 忘记密码链接样式 */
+  .forget-password {
     float: right;
     color: #7D8592;
     cursor: pointer;
-    transform: scale(1.2);
+    /* 将忘记密码链接放大为原始大小的 2 倍 */
+    transform: scale(2);
   }
+  /* 名为 else 的元素样式 */
   .else {
     position: absolute;
     top: 62%;
     left: 10%;
     width: 63vw;
   }
+  /* 输入框样式 */
   .preinput {
     border: 1px solid #ccc;
     flex: 1;
-    padding: 3%;
+    /* 输入框内边距为 2% */
+    padding: 2%;
     font-weight: 500;
     font-size: 25rpx;
     border-radius: 15rpx;
     outline: none;
     width: 75%;
     padding-left: 20rpx;
-    line-height: 76rpx;
+    /* 输入框高度为 30rpx */
+    height: 30rpx;
   }
- }
+  /* 表单元素内标签样式 */
+  .form-item label{
+    /* 标签底部外边距为 2% */
+    margin-bottom: 2%;
+  }
+  /* 表单元素样式 */
+  .form-item {
+    /* 使用相对定位 */
+    position: relative;
+    /* 元素顶部距离正常位置 20% 的高度 */
+    top: 20%;
+    /* 元素顶部外边距为 10rpx */
+    margin-top: 10rpx;
+    /* 元素左侧距离父元素左侧 9% 的宽度 */
+    left: 9%;
+    color: #00ADB5;
+    font-size: 30rpx;
+    font-weight: 700;
+    letter-spacing: 0px;
+    line-height: 26rpx;
+  }
+}
+
+/* 注册链接样式 */
 .register-link {
+  /* 使用绝对定位 */
   position: absolute;
-  white-space: nowrap; /* 防止文本换行 */
+  /* 防止文本换行 */
+  white-space: nowrap; 
+  /* 文本居中对齐 */
   text-align: center;
-  top:88%;
+  /* 元素顶部距离父元素顶部 88% 的高度 */
+  top: 88%;
+  /* 元素左侧距离父元素左侧 38% 的宽度 */
   left: 38%;
+  /* 元素高度为父元素高度的 5% */
   height: 5%;
+  /* 文字颜色 */
   color: #00ADB5;
+  /* 鼠标悬停时显示为手型，提示可点击 */
   cursor: pointer;
+  /* 字体大小为 40rpx */
   font-size: 40rpx;
+  /* 设置元素的堆叠顺序，使其处于较上层 */
   z-index: 999;
 }

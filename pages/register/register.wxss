@@ -1,247 +1,454 @@
-/* 容器 */
+/* 容器样式 */
+/* 定义名为 container 的类，作为整个页面布局的容器 */
 .container {
+  /* 使用弹性布局，方便子元素的排列和对齐 */
   display: flex;
+  /* 子元素垂直排列，从上到下 */
   flex-direction: column;
+  /* 容器高度占满整个视口的高度 */
   height: 100vh;
+  /* 容器宽度占满父元素的宽度 */
   width: 100%;
 }
-/* 内容区域 */
+
+/* 内容区域样式 */
+/* 定义名为 content 的类，用于包含页面的主要内容 */
 .content {
+  /* 该元素在弹性布局中会自动填充剩余空间 */
   flex: 1;
+  /* 使用弹性布局 */
   display: flex;
+  /* 子元素垂直排列 */
   flex-direction: column;
+  /* 子元素在交叉轴（水平方向）上居中对齐 */
   align-items: center;
+  /* 子元素在主轴（垂直方向）上居中对齐 */
   justify-content: center;
+  /* 使用相对定位，方便内部元素进行绝对定位 */
   position: relative;
 }
 
-/* 背景图片 */
+/* 背景图片样式 */
+/* 定义名为 background 的类，用于设置页面的背景图片 */
 .background {
+  /* 使用绝对定位，相对于最近的已定位祖先元素（这里应该是 content 元素）进行定位 */
   position: absolute;
+  /* 元素顶部与父元素顶部对齐 */
   top: 0;
+  /* 元素左侧与父元素左侧对齐 */
   left: 0;
+  /* 元素宽度占满父元素的宽度 */
   width: 100%;
+  /* 元素高度占满父元素的高度 */
   height: 100%;
+  /* 设置元素的堆叠顺序，-999 表示该元素在最底层 */
   z-index: -999;
 }
-/* SCU Makers */
+
+/* SCU Makers 文字样式 */
+/* 定义名为 SCU 的类，用于显示特定的文字内容 */
 .SCU{
+  /* 使用弹性布局 */
   display: flex;
+  /* 使用固定定位，相对于浏览器窗口进行定位 */
   position: fixed;
+  /* 元素左侧距离浏览器窗口左侧 23% 的宽度 */
   left: 23%;
+  /* 元素顶部距离浏览器窗口顶部 11% 的高度 */
   top: 11%;
+  /* 元素宽度为 202rpx（rpx 是微信小程序中使用的尺寸单位） */
   width: 202rpx;
+  /* 元素高度为 48rpx */
   height: 48rpx;
+  /* 元素完全不透明 */
   opacity: 1;
+  /* 文字字体大小为 70rpx */
   font-size: 70rpx;
+  /* 文字字体加粗，粗细为 800 */
   font-weight: 800;
+  /* 文字字母间距为 0px */
   letter-spacing: 0px;
+  /* 文字行高为 47.74rpx */
   line-height: 47.74rpx;
+  /* 文字颜色为白色 */
   color: rgba(255, 255, 255, 1);
+  /* 文字左对齐 */
   text-align: left;
+  /* 文字垂直对齐方式为顶部对齐 */
   vertical-align: top;
+  /* 文字不换行 */
   white-space: nowrap;  
 }
-/* 对话框 */
+
+/* 对话框样式 */
+/* 定义名为 dial 的类，用于显示对话框 */
 .dial {
-  /* 对话框 */
+  /* 使用弹性布局 */
   display: flex;
+  /* 使用固定定位 */
   position: fixed;
+  /* 元素左侧距离浏览器窗口左侧 10% 的宽度 */
   left: 10%; 
+  /* 元素顶部距离浏览器窗口顶部 17% 的高度 */
   top: 17%;  
+  /* 元素完全不透明 */
   opacity: 1;
-  z-index: -998; /* 图片叠加在底部 */
+  /* 设置元素的堆叠顺序，-998 表示该元素在背景之上，但仍在较底层 */
+  z-index: -998; 
 }
+
+/* 表单样式 */
+/* 定义 form 元素的样式，用于包裹注册表单 */
 form {
+  /* 使用绝对定位 */
   position: absolute;
+  /* 元素宽度占满父元素的宽度 */
   width: 100%;
+  /* 元素顶部与父元素顶部对齐 */
   top: 0%;
+  /* 元素宽度占视口宽度的 80% */
   width: 80vw; 
+  /* 元素高度占视口高度的 70% */
   height: 70vh;
+  /* 元素左侧距离父元素左侧 10% 的宽度 */
   left: 10%;
 }
-/* 注册按钮 */
+
+/* 注册按钮样式 */
+/* 定义名为 button 的类，用于显示注册按钮 */
 .button {
+  /* 按钮背景颜色为 #00ADB5 */
   background-color: #00ADB5;
+  /* 按钮文字颜色为白色 */
   color: white;
+  /* 按钮边框圆角为 30rpx */
   border-radius: 30rpx;
-  width: 70vw; /* 使用视口宽度单位 */
-  height: 5.9vh; /* 使用视口高度单位 */
+  /* 按钮宽度占视口宽度的 70% */
+  width: 70vw; 
+  /* 按钮高度占视口高度的 5.9% */
+  height: 5.9vh; 
+  /* 按钮完全不透明 */
   opacity: 1;
+  /* 按钮文字字体加粗，粗细为 700 */
   font-weight: 700;
+  /* 使用弹性布局，使按钮内的文字水平和垂直居中 */
   display: flex;
+  /* 子元素在主轴（水平方向）上居中对齐 */
   justify-content: center;
+  /* 子元素在交叉轴（垂直方向）上居中对齐 */
   align-items: center;
-  position: absolute; /* 固定定位 */
+  /* 使用绝对定位 */
+  position: absolute; 
+  /* 元素底部距离父元素底部 15% 的高度 */
   bottom: 15%; 
-  left: 6%; /* 水平居中 */
+  /* 元素左侧距离父元素左侧 6% 的宽度 */
+  left: 6%; 
+  /* 设置元素的堆叠顺序，999 表示该元素在最上层 */
   z-index: 999;
 }
+
+/* 箭头样式 */
+/* 定义名为 arrow 的类，用于显示箭头图标 */
 .arrow{
+  /* 使用弹性布局 */
   display: flex;
+  /* 使用绝对定位 */
   position: absolute;
-  width:8vw;
-  height:5vh;
+  /* 元素宽度占视口宽度的 8% */
+  width: 8vw;
+  /* 元素高度占视口高度的 5% */
+  height: 5vh;
+  /* 元素顶部距离父元素顶部 77.5% 的高度 */
   top: 77.5%;
+  /* 元素右侧距离父元素右侧 32% 的宽度 */
   right: 32%;
+  /* 背景图片根据元素大小进行缩放，保持图片比例 */
   background-size: contain;
+  /* 设置元素的堆叠顺序，999 表示该元素在最上层 */
   z-index: 999;
 }
-/* 验证码图片 */
+
+/* 验证码图片样式 */
+/* 定义名为 code 的类，用于显示验证码图片或按钮 */
 .code {
+  /* 验证码背景颜色为 #00ADB5 */
   background-color: #00ADB5;
-  color: white; /* 文字颜色根据实际需求调整 */
+  /* 验证码文字颜色为白色 */
+  color: white; 
+  /* 去掉边框 */
   border: none;
+  /* 元素右侧距离父元素右侧 18% 的宽度 */
   right: 18%;
+  /* 左上角圆角半径为 0rpx */
   border-top-left-radius: 0rpx;
+  /* 左下角圆角半径为 0rpx */
   border-bottom-left-radius: 0rpx;
-  border-top-right-radius: 15rpx; /* 右边上圆角半径 */
-  border-bottom-right-radius: 15rpx; /* 右边下圆角半径 */
+  /* 右上角圆角半径为 15rpx */
+  border-top-right-radius: 15rpx; 
+  /* 右下角圆角半径为 15rpx */
+  border-bottom-right-radius: 15rpx; 
+  /* 文字水平居中对齐 */
   text-align: center;
-  font-size:25rpx;
-  line-height: 325%; /* 使文字垂直居中，高度与按钮高度一致 */
+  /* 文字字体大小为 25rpx */
+  font-size: 25rpx;
+  /* 文字行高为元素高度的 325%，实现垂直居中 */
+  line-height: 325%; 
+  /* 文字不换行 */
   white-space: nowrap;
+  /* 元素完全不透明 */
   opacity: 1;
+  /* 设置元素的堆叠顺序，999 表示该元素在最上层 */
   z-index: 999;
+  /* 使用绝对定位 */
   position: absolute;
+  /* 元素高度占满父元素的高度 */
   height: 100%;
+  /* 元素宽度占父元素宽度的 30% */
   width: 30%;
+  /* 元素顶部距离父元素顶部 50% 的高度 */
   top: 50%;
-  transform: translateY(-50%); /* 微调垂直居中 */
+  /* 元素在垂直方向上向上偏移自身高度的 50%，实现垂直居中 */
+  transform: translateY(-50%); 
+  /* 鼠标指针变为手型，表示可点击 */
   cursor: pointer;
 }
 
-/* 注册标题 */
+/* 注册标题样式 */
+/* 定义名为 register-title 的类，用于显示注册标题 */
 .register-title {
+  /* 使用绝对定位 */
   position: absolute;
-  top:12%;
+  /* 元素顶部距离父元素顶部 12% 的高度 */
+  top: 12%;
+  /* 元素左侧距离父元素左侧 24% 的宽度 */
   left: 24%;
+  /* 元素宽度为 400rpx */
   width: 400rpx;
+  /* 元素高度为 26rpx */
   height: 26rpx;
+  /* 元素完全不透明 */
   opacity: 1;
+  /* 文字字体大小为 30rpx */
   font-size: 30rpx;
+  /* 文字字体加粗，粗细为 700 */
   font-weight: 700;
+  /* 文字字母间距为 0px */
   letter-spacing: 0px;
+  /* 文字行高为 26rpx */
   line-height: 26rpx;
+  /* 文字颜色为 #222831 */
   color: rgba(34, 40, 49, 1);
+  /* 文字水平居中对齐 */
   text-align: center;
+  /* 文字垂直对齐方式为顶部对齐 */
   vertical-align: top;
-  z-index: 1; /* 设置较高的层级 */
+  /* 设置元素的堆叠顺序，1 表示该元素在较高层级 */
+  z-index: 1; 
 }
 
-/* 注册表单内容 */
+/* 注册表单内容样式 */
+/* 定义名为 register-content 的类，用于包裹注册表单的具体内容 */
 .register-content {
+  /* 使用弹性布局 */
   display: flex;
+  /* 使用绝对定位 */
   position: absolute;
+  /* 元素宽度占满父元素的宽度 */
   width: 100%;
+  /* 元素高度占视口高度的 70% */
   height: 70vh;
+  /* 元素顶部距离父元素顶部 17% 的高度 */
   top: 17%;
 }
 
-/* 表单项 */
+/* 表单项样式 */
+/* 定义名为 form-item 的类，用于包裹表单中的每个输入项 */
 .form-item {
+  /* 使用相对定位 */
   position: relative;
+  /* 元素顶部距离正常位置 15% 的高度 */
   top: 15%;
+  /* 元素顶部外边距为 30rpx */
   margin-top: 30rpx;
+  /* 元素左侧距离父元素左侧 9% 的宽度 */
   left: 9%;
+  /* 文字颜色为 #00ADB5 */
   color: #00ADB5;
+  /* 文字字体大小为 30rpx */
   font-size: 30rpx;
+  /* 文字字体加粗，粗细为 700 */
   font-weight: 700;
+  /* 文字字母间距为 0px */
   letter-spacing: 0px;
+  /* 文字行高为 26rpx */
   line-height: 26rpx;
 }
 
+/* 表单项内输入框样式 */
+/* 定义 form-item 类下的 input 元素样式 */
 .form-item input {
+  /* 输入框左侧外边距为 0% */
   margin-left: 0%;
 }
+
+/* 输入框容器样式 */
+/* 定义名为 input-container1 的类，用于包裹输入框，方便定位和样式设置 */
 .input-container1 {
+  /* 使用相对定位 */
   position: relative;
+  /* 元素宽度占满父元素的宽度 */
   width: 100%;
 }
+/* 同理，定义名为 input-container2 的类 */
 .input-container2 {
   position: relative;
   width: 100%;
 }
+/* 同理，定义名为 input-container3 的类 */
 .input-container3 {
   position: relative;
   width: 100%;
 }
-/* 密码显示/隐藏图标 */
+
+/* 密码显示/隐藏图标样式 */
+/* 定义名为 password-toggle-icon 的类，用于显示密码显示/隐藏的图标 */
 .password-toggle-icon {
+  /* 使用绝对定位 */
   position: absolute;
+  /* 元素右侧距离父元素右侧 22% 的宽度 */
   right: 22%;
+  /* 元素高度为 50rpx */
   height: 50rpx;
+  /* 元素宽度为 50rpx */
   width: 50rpx;
+  /* 元素顶部距离父元素顶部 50% 的高度 */
   top: 50%;
-  transform: translateY(-50%); /* 微调垂直居中 */
+  /* 元素在垂直方向上向上偏移自身高度的 50%，实现垂直居中 */
+  transform: translateY(-50%); 
+  /* 鼠标指针变为手型，表示可点击 */
   cursor: pointer;
+  /* 设置元素的堆叠顺序，999 表示该元素在最上层 */
   z-index: 999;
 }
 
-/* 返回登录链接 */
+/* 返回登录链接样式 */
+/* 定义名为 login-link 的类，用于显示返回登录的链接 */
 .login-link {
+  /* 使用绝对定位 */
   position: absolute;
-  white-space: nowrap; /* 防止文本换行 */
+  /* 文字不换行 */
+  white-space: nowrap; 
+  /* 文字水平居中对齐 */
   text-align: center;
-  top:90%;
+  /* 元素顶部距离父元素顶部 90% 的高度 */
+  top: 90%;
+  /* 元素左侧距离父元素左侧 30% 的宽度 */
   left: 30%;
+  /* 元素高度占父元素高度的 5% */
   height: 5%;
+  /* 文字颜色为 #00ADB5 */
   color: #00ADB5;
+  /* 鼠标指针变为手型，表示可点击 */
   cursor: pointer;
+  /* 文字字体大小为 40rpx */
   font-size: 40rpx;
+  /* 设置元素的堆叠顺序，999 表示该元素在最上层 */
   z-index: 999;
 }
-/* 输入框默认样式 */
+
+/* 不同屏幕高度下输入框及标签样式 */
+/* 当屏幕高度小于等于 600px 时的样式 */
 @media screen and (max-height: 600px) {
+  /* 输入框样式 */
   .preinput {
+    /* 输入框边框为 1px 灰色实线 */
     border: 1px solid #ccc;
+    /* 输入框在弹性布局中自动填充剩余空间 */
     flex: 1;
+    /* 输入框内边距为 1% */
     padding: 1%;
+    /* 输入框顶部外边距为 0% */
     margin-top: 0%;
+    /* 文字字体粗细为 500 */
     font-weight: 500;
+    /* 文字字体大小为 25rpx */
     font-size: 25rpx;
+    /* 输入框边框圆角为 15rpx */
     border-radius: 15rpx;
+    /* 去除输入框聚焦时的默认轮廓 */
     outline: none;
+    /* 输入框宽度占父元素宽度的 75% */
     width: 75%;
+    /* 输入框左侧内边距为 20rpx */
     padding-left: 20rpx;
+    /* 文字行高为 76rpx */
     line-height: 76rpx;
   }
+  /* 表单项内标签样式 */
   .form-item label {
+    /* 将标签显示为块级元素，独占一行 */
     display: block;
+    /* 标签底部外边距为 20rpx */
     margin-bottom: 20rpx;
+    /* 标签左侧外边距为 20rpx */
     margin-left: 20rpx;
+    /* 文字颜色为 #00ADB5 */
     color: #00ADB5;
+    /* 文字字体大小为 30rpx */
     font-size: 30rpx;
+    /* 文字字体加粗，粗细为 700 */
     font-weight: 700;
   }
- }
- 
- @media screen and (min-height: 600px) and (max-height: 700px) {
+}
+/* 当屏幕高度在 600px 到 700px 之间时应用以下样式 */
+@media screen and (min-height: 600px) and (max-height: 700px) {
+  /* 输入框样式 */
   .preinput {
+    /* 输入框边框设置为 1 像素的灰色实线 */
     border: 1px solid #ccc;
+    /* 输入框在弹性布局中会自动填充剩余空间 */
     flex: 1;
+    /* 输入框内边距设置为 1.8% */
     padding: 1.8%;
+    /* 输入框内文字的字体粗细设置为 500 */
     font-weight: 500;
+    /* 输入框内文字的字体大小设置为 25rpx */
     font-size: 25rpx;
+    /* 输入框边框圆角设置为 15rpx */
     border-radius: 15rpx;
+    /* 去除输入框获得焦点时的默认轮廓线 */
     outline: none;
+    /* 输入框宽度设置为其父元素宽度的 75% */
     width: 75%;
+    /* 输入框左侧内边距设置为 20rpx */
     padding-left: 20rpx;
+    /* 输入框内文字的行高设置为 76rpx */
     line-height: 76rpx;
   }
+  /* 表单元素内标签样式 */
   .form-item label {
+    /* 将标签显示为块级元素，独占一行 */
     display: block;
+    /* 标签底部外边距设置为 12rpx */
     margin-bottom: 12rpx;
+    /* 标签左侧外边距设置为 20rpx */
     margin-left: 20rpx;
+    /* 标签文字颜色设置为 #00ADB5 */
     color: #00ADB5;
+    /* 标签文字字体大小设置为 30rpx */
     font-size: 30rpx;
+    /* 标签文字字体粗细设置为 700（加粗） */
     font-weight: 700;
   }
- }
- @media screen and (min-height: 700px) and (max-height: 800px) {
+}
+
+/* 当屏幕高度在 700px 到 800px 之间时应用以下样式 */
+@media screen and (min-height: 700px) and (max-height: 800px) {
+  /* 输入框样式 */
   .preinput {
     border: 1px solid #ccc;
     flex: 1;
+    /* 输入框内边距设置为 2.2% */
     padding: 2.2%;
     font-weight: 500;
     font-size: 25rpx;
@@ -251,19 +458,25 @@ form {
     padding-left: 20rpx;
     line-height: 76rpx;
   }
+  /* 表单元素内标签样式 */
   .form-item label {
     display: block;
+    /* 标签底部外边距设置为 15rpx */
     margin-bottom: 15rpx;
     margin-left: 20rpx;
     color: #00ADB5;
     font-size: 30rpx;
     font-weight: 700;
   }
- }
- @media screen and (min-height: 800px) and (max-height: 900px)  {
+}
+
+/* 当屏幕高度在 800px 到 900px 之间时应用以下样式 */
+@media screen and (min-height: 800px) and (max-height: 900px)  {
+  /* 输入框样式 */
   .preinput {
     border: 1px solid #ccc;
     flex: 1;
+    /* 输入框内边距设置为 3% */
     padding: 3%;
     font-weight: 500;
     font-size: 25rpx;
@@ -273,16 +486,21 @@ form {
     padding-left: 20rpx;
     line-height: 76rpx;
   }
+  /* 表单元素内标签样式 */
   .form-item label {
     display: block;
+    /* 标签底部外边距设置为 20rpx */
     margin-bottom: 20rpx;
     margin-left: 20rpx;
     color: #00ADB5;
     font-size: 30rpx;
     font-weight: 700;
   }
- }
- @media screen and (min-height: 900px) and (max-height: 1000px)  {
+}
+
+/* 当屏幕高度在 900px 到 1000px 之间时应用以下样式 */
+@media screen and (min-height: 900px) and (max-height: 1000px)  {
+  /* 输入框样式 */
   .preinput {
     border: 1px solid #ccc;
     flex: 1;
@@ -295,17 +513,94 @@ form {
     padding-left: 20rpx;
     line-height: 76rpx;
   }
+  /* 表单元素内标签样式 */
   .form-item label {
     display: block;
+    /* 标签底部外边距设置为 30rpx */
     margin-bottom: 30rpx;
     margin-left: 20rpx;
     color: #00ADB5;
     font-size: 30rpx;
     font-weight: 700;
   }
- }
-/* 输入框选中时的样式 */
+}
+
+/* 当屏幕高度大于等于 1000px 时应用以下样式 */
+@media screen and (min-height: 1000px){
+  /* 输入框样式 */
+  .preinput {
+    border: 1px solid #ccc;
+    flex: 1;
+    /* 输入框内边距设置为 2% */
+    padding: 2%;
+    font-weight: 500;
+    font-size: 25rpx;
+    border-radius: 15rpx;
+    outline: none;
+    width: 75%;
+    padding-left: 20rpx;
+    /* 输入框高度设置为 30rpx */
+    height: 30rpx;
+  }
+  /* 表单元素内标签样式 */
+  .form-item label {
+    display: block;
+    /* 标签底部外边距设置为 10rpx */
+    margin-bottom: 10rpx;
+    margin-left: 20rpx;
+    color: #00ADB5;
+    /* 标签文字字体大小设置为 25rpx */
+    font-size: 25rpx;
+    font-weight: 700;
+  }
+  /* 表单元素样式 */
+  .form-item {
+    /* 使用相对定位，相对于其正常位置进行定位 */
+    position: relative;
+    /* 元素顶部相对于正常位置向下偏移 15% */
+    top: 15%;
+    /* 元素顶部外边距设置为 10rpx */
+    margin-top: 10rpx;
+    /* 元素左侧相对于父元素左侧偏移 9% */
+    left: 9%;
+    color: #00ADB5;
+    font-size: 30rpx;
+    font-weight: 700;
+    letter-spacing: 0px;
+    line-height: 26rpx;
+  }
+  /* 验证码区域样式 */
+  .code {
+    background-color: #00ADB5;
+    color: white; /* 文字颜色可根据实际需求调整 */
+    border: none;
+    /* 验证码区域右侧相对于父元素右侧偏移 18% */
+    right: 18%;
+    border-top-left-radius: 0rpx;
+    border-bottom-left-radius: 0rpx;
+    border-top-right-radius: 15rpx; /* 右边上圆角半径 */
+    border-bottom-right-radius: 15rpx; /* 右边下圆角半径 */
+    text-align: center;
+    font-size: 25rpx;
+    /* 行高设置为 230%，使文字在垂直方向上居中，与按钮高度适配 */
+    line-height: 230%; 
+    white-space: nowrap;
+    opacity: 1;
+    z-index: 999;
+    position: absolute;
+    height: 100%;
+    width: 30%;
+    top: 50%;
+    /* 元素在垂直方向上向上偏移自身高度的 50%，实现垂直居中微调 */
+    transform: translateY(-50%); 
+    cursor: pointer;
+  }
+}
+
+/* 输入框获得焦点时的样式 */
 .preinput.focused {
+  /* 输入框边框颜色设置为 #00ADB5 */
   border-color: #00ADB5;
+  /* 输入框添加阴影效果，阴影颜色为 rgba(0, 173, 181, 0.5)，模糊半径为 5px */
   box-shadow: 0 0 5px rgba(0, 173, 181, 0.5);
 }
