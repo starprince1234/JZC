@@ -47,82 +47,79 @@
   <!--协会成员和积分-->
   <view class="membership">
   <!-- 根据 isAssociationMember 变量的值动态显示 '协会' 或 '外部' -->
-    <text class="membership-label1">
-      {{isAssociationMember ? '协会' : '外部'}}</text>
-      <!-- 固定显示 '成员' 文本 -->
-    <text class="membership-label2">成员</text>
+    <text class="membership-label">{{isAssociationMember ? '协会\n成员' : '外部\n成员'}}</text>
+    <!--分割线图标-->
+    <image class="separate" src="/images/me/separate.svg" mode = "aspectFill" />
     <!-- 仅当用户是协会成员时显示积分相关内容 -->
     <view class="score" wx:if="{{isAssociationMember}}">
       <!-- 显示 '积分' 标签 -->
       <text class="score-label">积分</text>
       <!-- 积分值的显示区域，点击后触发 goToPointsPage 函数 -->
-      <view class="score-value" bindtap="goToPointsPage" style="background-color: #00ADB5;">
+      <button class="score-value" bindtap="goToPointsPage" style="width:100%; background-color: #00ADB5;">
       <!-- 显示用户的积分，积分值从 userPoints 变量获取 -->
         <text class="score-number">{{userPoints}}</text>
         <!--白色箭头图标-->
         <image class="arrow-icon-white" src="/images/me/right_arrow_white.svg" mode="aspectFill" />
-        </view>
-        </view>
-    <!--分割线图标-->
-     <image class="separate" src="/images/me/separate.svg" />
-     </view>
+      </button>
+    </view>
+  </view>
 
 
-  <!-- 下半部分展示五个功能框 -->
-<view class="function-list-container">
-  <image class="background-image" src="/images/me/cat_background.svg" mode="aspectFill"/>
-      <view class="function-list">
-      <!-- 第一个功能项：我的借物，点击后触发 goToBorrowPage 函数-->
-        <view class="function-item" bindtap="goToBorrowPage" style="background-color: #EEEEEE;">
-          <text> 我的借物</text>
-          <!--箭头图标-->
-          <image class="arrow-icon" src="/images/me/right_arrow_black.svg"   mode="aspectFill" />
+    <!-- 下半部分展示五个功能框 -->
+  <view class="function-list-container">
+    <image class="background-image" src="/images/me/cat_background.svg" mode="aspectFill"/>
+        <view class="function-list">
+        <!-- 第一个功能项：我的借物，点击后触发 goToBorrowPage 函数-->
+          <view class="function-item" bindtap="goToBorrowPage" style="background-color: #EEEEEE;">
+            <text> 我的借物</text>
+            <!--箭头图标-->
+            <image class="arrow-icon" src="/images/me/right_arrow_black.svg"   mode="aspectFill" />
+          </view>
+          <!-- 第二个功能项：我的项目，点击后触发 goToProjectPage 函数 -->
+          <view class="function-item" bindtap="goToProjectPage" style="background-color: #00ADB5;" >
+            <text> 我的项目</text>
+            <!--箭头图标-->
+            <image class="arrow-icon" src="/images/me/right_arrow_black.svg"   mode="aspectFill" />
+          </view>
+          <!-- 第三个功能项：我的场地，点击后触发 goToVenuePage 函数 -->
+          <view class="function-item" bindtap="goToVenuePage" style="background-color: #EEEEEE;" >
+            <text> 我的场地</text>
+            <!--箭头图标-->
+            <image class="arrow-icon" src="/images/me/right_arrow_black.svg"  mode="aspectFill" />
+          </view>
+          <!-- 第四个功能项：协会工作，仅当用户是协会成员时显示，点击后触发 goToWorkPage 函数 -->
+          <view class="function-item" bindtap="goToWorkPage" style="background-color: #00ADB5;" wx:if="{{isAssociationMember}}">
+            <text> 协会工作</text>
+            <!--箭头图标-->
+            <image class="arrow-icon" src="/images/me/right_arrow_black.svg"   mode="aspectFill" />
+          </view>
+          <!-- 第五个功能项：荣誉墙，点击后触发 goToHonorWallPage 函数 -->
+          <view class="function-item" bindtap="goToHonorWallPage" style="background-color: #EEEEEE;">
+            <text>荣誉墙</text>
+            <!--箭头图标-->
+            <image class="arrow-icon" src="/images/me/right_arrow_black.svg"  mode="aspectFill" />
+          </view>
         </view>
-         <!-- 第二个功能项：我的项目，点击后触发 goToProjectPage 函数 -->
-        <view class="function-item" bindtap="goToProjectPage" style="background-color: #00ADB5;" >
-          <text> 我的项目</text>
-          <!--箭头图标-->
-          <image class="arrow-icon" src="/images/me/right_arrow_black.svg"   mode="aspectFill" />
-        </view>
-        <!-- 第三个功能项：我的场地，点击后触发 goToVenuePage 函数 -->
-        <view class="function-item" bindtap="goToVenuePage" style="background-color: #EEEEEE;" >
-          <text> 我的场地</text>
-          <!--箭头图标-->
-          <image class="arrow-icon" src="/images/me/right_arrow_black.svg"  mode="aspectFill" />
-        </view>
-        <!-- 第四个功能项：协会工作，仅当用户是协会成员时显示，点击后触发 goToWorkPage 函数 -->
-        <view class="function-item" bindtap="goToWorkPage" style="background-color: #00ADB5;" wx:if="{{isAssociationMember}}">
-          <text> 协会工作</text>
-          <!--箭头图标-->
-          <image class="arrow-icon" src="/images/me/right_arrow_black.svg"   mode="aspectFill" />
-        </view>
-         <!-- 第五个功能项：荣誉墙，点击后触发 goToHonorWallPage 函数 -->
-        <view class="function-item" bindtap="goToHonorWallPage" style="background-color: #EEEEEE;">
-          <text>荣誉墙</text>
-          <!--箭头图标-->
-          <image class="arrow-icon" src="/images/me/right_arrow_black.svg"  mode="aspectFill" />
+  </view>
+  <!-- 底部的导航栏 -->
+  <view class="bottom-nav">
+      <!-- 社区的按钮,根据页面选择合适的图标形式 -->
+      <view class="nav-item" data-page="community" bindtap="switchPage">
+        <image class="community-icon" src="{{ activeTab=='community' ? '/images/me/community_chosen.svg' : '/images/me/community_unchosen.svg' }}" mode="aspectFill" />
+        <text class="nav-item-text1">社区</text>
+      </view>
+      <!-- 首页的按钮，根据页面选择合适的猫图标形式 -->
+      <view class="circle"data-page="index" bindtap="switchPage">
+        <view class="green-circle">
+          <image class="icon-on-green-circle" src="{{ activeTab=='index' ? '/images/me/cat_white.svg' : '/images/me/cat_black.svg' }}" mode="aspectFit"></image>
         </view>
       </view>
-</view>
-<!-- 底部的导航栏 -->
-<view class="bottom-nav">
-    <!-- 社区的按钮,根据页面选择合适的图标形式 -->
-    <view class="nav-item" data-page="community" bindtap="switchPage">
-      <image class="community-icon" src="{{ activeTab=='community' ? '/images/me/community_chosen.svg' : '/images/me/community_unchosen.svg' }}" mode="aspectFill" />
-      <text class="nav-item-text1">社区</text>
-    </view>
-    <!-- 首页的按钮，根据页面选择合适的猫图标形式 -->
-    <view class="circle"data-page="index" bindtap="switchPage">
-      <view class="green-circle">
-        <image class="icon-on-green-circle" src="{{ activeTab=='index' ? '/images/me/cat_white.svg' : '/images/me/cat_black.svg' }}" mode="aspectFit"></image>
+      <!-- 我的的按钮，根据页面选择合适的图标形式 -->
+      <view class="nav-item" data-page="me" bindtap="switchPage">
+        <image class="me-icon" src="{{ activeTab=='me' ? '/images/me/me_chosen.svg' : '/images/me/me_unchosen.svg' }}" mode="aspectFit" style="color: {{ activeTab=='me' ? '#00ADB5' : '#ffffff' }}"></image>
+        <text class="nav-item-text2">我的</text>
       </view>
-    </view>
-    <!-- 我的的按钮，根据页面选择合适的图标形式 -->
-    <view class="nav-item" data-page="me" bindtap="switchPage">
-      <image class="me-icon" src="{{ activeTab=='me' ? '/images/me/me_chosen.svg' : '/images/me/me_unchosen.svg' }}" mode="aspectFit" style="color: {{ activeTab=='me' ? '#00ADB5' : '#ffffff' }}"></image>
-      <text class="nav-item-text2">我的</text>
-    </view>
-</view>
+  </view>
 </view>
   
 
