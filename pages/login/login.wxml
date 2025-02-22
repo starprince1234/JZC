@@ -1,0 +1,100 @@
+<!-- 显示 'SCU Makers' 文字，使用名为 SCU 的类来设置文字样式 -->
+<view class="SCU">SCU Makers</view>
+<view>
+  <!-- 注释部分：假定背景图 id 为 1，猫猫图 id 为 2，后续根据接口确定使用方式 -->
+  <!-- <image class="background" src="data:{{image1.filetype}};base64,{{image1.data}}" alt="{{image1.alt_text}}"></image>
+  <image class="cat" src="data:{{image2.filetype}};base64,{{image2.data}}" alt="{{image2.alt_text}}"></image> -->
+  
+  <!-- 实际使用的背景图，通过设置 src 属性指定图片路径 -->
+  <image class="background" src="/images/login/login_register_background.png"></image>
+  <!-- 猫猫图，同样通过 src 属性指定图片路径 -->
+  <image class="cat" src="/images/login/login_cat.png"></image>
+</view>
+
+<!-- 登录内容区域，使用名为 login-content 的类来设置布局和样式 -->
+<view class="login-content">
+  <!-- 登录表单内容 -->
+  <!-- 对话框图片，mode="scaleToFill" 表示将图片缩放以填满容器，通过 style 属性设置宽高 -->
+  <image class="dial" src="/images/login/login_dial.png" mode="scaleToFill" style="width: 80vw; height: 56vh;"></image>
+  <!-- 登录标题，显示登录相关的提示信息 -->
+  <view class="login-title">登录 SCU Makers 小程序</view>
+  
+  <!-- 登录表单 -->
+  <form>
+    <!-- 邮箱输入项，使用 form-item 类来设置样式 -->
+    <view class="form-item">
+      <!-- 邮箱输入项的标签 -->
+      <label>邮箱</label>
+      <!-- 邮箱输入框 -->
+      <input
+        <!-- 根据 isFocused1 的值决定是否添加 focused 类，用于改变输入框样式 -->
+        class="preinput {{isFocused1 ? 'focused' : ''}}"
+        type="text"
+        placeholder="你的邮箱"
+        <!-- 光标位置，可根据业务逻辑动态设置 -->
+        cursor="{{cursorPosition}}"
+        <!-- 输入框的值，绑定到 email 变量 -->
+        value="{{email}}"
+        <!-- 输入事件，触发 handleEmailInput 方法 -->
+        bindinput="handleEmailInput"
+        <!-- 聚焦事件，触发 handleFocus1 方法 -->
+        bindfocus="handleFocus1"
+        <!-- 失焦事件，触发 handleBlur1 方法 -->
+        bindblur="handleBlur1"
+      />
+    </view>   
+
+    <!-- 密码输入项，点击该区域会触发 handleContainerClick 方法 -->
+    <view class="form-item" bindtap="handleContainerClick">
+      <!-- 密码输入项的标签 -->
+      <label>密码</label>
+      <!-- 密码输入框和密码可见性切换图标的容器 -->
+      <view class="input-container">
+        <!-- 密码输入框 -->
+        <input
+          <!-- 根据 isFocused2 的值决定是否添加 focused 类 -->
+          class="preinput {{isFocused2 ? 'focused' : ''}}"
+          <!-- 根据 isPasswordVisible 的值决定输入框类型是文本还是密码 -->
+          type="{{isPasswordVisible ? 'text' : 'password'}}"
+          placeholder="密码"
+          <!-- 输入框的值，绑定到 password 变量 -->
+          value="{{password}}"
+          <!-- 输入事件，触发 handlePasswordInput 方法 -->
+          bindinput="handlePasswordInput"
+          <!-- 聚焦事件，触发 handleFocus2 方法 -->
+          bindfocus="handleFocus2"
+          <!-- 失焦事件，触发 handleBlur2 方法 -->
+          bindblur="handleBlur2"
+          <!-- 是否聚焦，绑定到 isFocus 变量 -->
+          focus="{{isFocus}}"
+        />
+        <!-- 密码可见性切换图标 -->
+        <image
+          <!-- 根据 isPasswordVisible 的值显示不同的图标 -->
+          src="{{isPasswordVisible ? 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDQ4IDQ4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0yNCAzNkMzNS4wNDU3IDM2IDQ0IDI0IDQ0IDI0QzQ0IDI0IDM1LjA0NTcgMTIgMjQgMTJDMTIuOTU0MyAxMiA0IDI0IDQgMjRDNCAyNCAxMi45NTQzIDM2IDI0IDM2WiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNMjQgMjlDMjYuNzYxNCAyOSAyOSAyNi43NjE0IDI5IDI0QzI5IDIxLjIzODYgMjYuNzYxNCAxOSAyNCAxOUMyMS4yMzg2IDE5IDE5IDIxLjIzODYgMTkgMjRDMTkgMjYuNzYxNCAyMS4yMzg2IDI5IDI0IDI5WiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=' : 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDQ4IDQ4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik02IDE2QzYuNjM0NzIgMTcuMjE5MyA3LjU5NjQ2IDE4LjM1MDQgOC44MjI3NiAxOS4zNTU0QzEyLjI2MSAyMi4xNzMzIDE3Ljc3OSAyNCAyNCAyNEMzMC4yMjEgMjQgMzUuNzM5IDIyLjE3MzMgMzkuMTc3MiAxOS4zNTU0QzQwLjQwMzUgMTguMzUwNCA0MS4zNjUzIDE3LjIxOTMgNDIgMTYiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNMjguOTc3NSAyNEwzMS4wNDggMzEuNzI3NCIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik0zNy4zNTM1IDIxLjM1MzZMNDMuMDEwMyAyNy4wMTA0IiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBhdGggZD0iTTUuMDAwMDQgMjcuMDEwM0wxMC42NTY5IDIxLjM1MzQiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNMTYuOTI3OCAzMS43Mjc2TDE4Ljk5ODMgMjQuMDAwMSIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg=='}}"
+          <!-- 点击图标触发 togglePasswordVisibility 方法 -->
+          catchtap="togglePasswordVisibility"
+          <!-- 传递当前密码可见性状态 -->
+          data-visible="{{isPasswordVisible}}"
+          class="password-toggle-icon"
+        />
+      </view>
+    </view> 
+
+    <!-- 其他选项区域，如记住我和忘记密码 -->
+    <view class="else">
+      <!-- 记住我复选框，通过 checked 属性绑定到 rememberMe 变量，点击触发 toggleRememberMe 方法 -->
+      <checkbox class="checkbox" checked="{{rememberMe}}" bindtap="toggleRememberMe">记住我</checkbox>
+      <!-- 忘记密码链接，点击触发 handleForgetPassword 方法 -->
+      <text class="forget-password" bindtap="handleForgetPassword">忘记密码?</text>
+    </view>
+
+    <!-- 登录按钮，点击触发 handleLogin 方法 -->
+    <button class="button" bindtap="handleLogin">登  录</button>
+    <!-- 箭头图标，可用于装饰或提示操作方向 -->
+    <image class="arrow" src="/images/login/icn_general_arrow_go_white.png"></image>
+    
+    <!-- 注册账号链接，点击触发 navigateToRegister 方法，用于跳转到注册页面 -->
+    <text class="register-link" bindtap="navigateToRegister">注册账号</text>
+  </form>
+</view>
