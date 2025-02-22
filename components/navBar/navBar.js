@@ -58,6 +58,10 @@ Component({
     delta: {
       type: Number,
       value: 1
+    },
+    showEditIcon: {
+      type: Boolean,
+      value: false
     }
   },
   created: function() {
@@ -128,7 +132,21 @@ Component({
           navBarExtendHeight,
           ios
         });
-      }
+      } // 去掉多余的逗号
+    },
+    onEditTap: function() {
+      // 处理编辑图标点击事件
+      console.log('编辑图标被点击');
+      // 可以在这里添加更多逻辑，如跳转到编辑页面等
+      wx.navigateTo({
+        url: '/pages/editPage/editPage',
+        success: function(res) {
+          console.log('成功跳转到 editPage 页面');
+        },
+        fail: function(err) {
+          console.error('跳转到 editPage 页面失败:', err);
+        }
+      });
     },
     _showChange: function(value) {
       this.setStyle();
