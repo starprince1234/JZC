@@ -36,18 +36,18 @@ Page({
   },
 
     // 四个导航方法
-    // navigate1() {
-    //   wx.navigateTo({ url: '/pages/schedule/schedule' }) // 学年工作安排
-    // },
-    // navigate2() {
-    //   wx.navigateTo({ url: '/pages/task/task' }) // 发布任务
-    // },
-    // navigate3() {
-    //   wx.navigateTo({ url: '/pages/promotion/promotion' }) // 活动宣传发布
-    // },
-    // navigate4() {
-    //   wx.navigateTo({ url: '/pages/xiumi/xiumi' }) // 秀米链接提交
-    // },
+    navigate1() {
+      wx.navigateTo({ url: '/pages/schedule/schedule' }) // 学年工作安排
+    },
+    navigate2() {
+      wx.navigateTo({ url: '/pages/task/task' }) // 发布任务
+    },
+    navigate3() {
+      wx.navigateTo({ url: '/pages/activity/activity' }) // 活动宣传发布
+    },
+    navigate4() {
+      wx.navigateTo({ url: '/pages/xiumi/xiumi' }) // 秀米链接提交
+    },
 
 
   
