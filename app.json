@@ -4,7 +4,6 @@
     "pages/index/index",
     "pages/me/me",
     "pages/editPage/editPage",
-    "pages/register/register"
     "pages/club_work/club_work",
     "pages/publicity_work_page/publicity_work_page",
     "pages/base_management_work_page/base_management_work_page",
